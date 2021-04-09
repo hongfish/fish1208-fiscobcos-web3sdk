@@ -1,0 +1,37 @@
+
+encrypt-type: # 0：普通， 1：国密
+  encrypt-type: 0
+
+group-channel-connections-config:
+  caCert: classpath:fiscobcos-${spring.profiles.active}/ca.crt
+  sslCert: classpath:fiscobcos-${spring.profiles.active}/sdk.crt
+  sslKey: classpath:fiscobcos-${spring.profiles.active}/sdk.key
+  gmCaCert: classpath:fiscobcos-${spring.profiles.active}/gmca.crt
+  gmEnSslCert: classpath:fiscobcos-${spring.profiles.active}/gmensdk.crt
+  gmEnSslKey: classpath:fiscobcos-${spring.profiles.active}/gmensdk.key
+  gmSslCert: classpath:fiscobcos-${spring.profiles.active}/gmsdk.crt
+  gmSslKey: classpath:fiscobcos-${spring.profiles.active}/gmsdk.key
+  all-channel-connections:
+    - group-id: 1 #group ID
+      connections-str:
+        # 若节点小于v2.3.0版本，查看配置项listen_ip:channel_listen_port
+        - 192.168.160.136:20200
+        - 192.168.160.136:20201
+        #- group-id: 2
+        #connections-str:
+        #- 192.168.160.130:20200
+        #- 192.168.160.130:20201
+        #- 192.168.160.135:20202
+        #- 192.168.160.135:20203
+
+channel-service:
+  group-id: 1 # sdk实际连接的群组
+  agency-name: fisco # 机构名称
+
+accounts:
+  pem-file: classpath:fiscobcos-${spring.profiles.active}/0x9ff96dcf17f27ddd643c23bc1236733aa92a1f20.pem
+#   p12-file: 0x98333491efac02f8ce109b0c499074d47e7779a6.p12
+#   password: 123456
+
+contract-address:
+  kVPerson: "0x3cc40ecd5000f58c3458fef29b91114bd5e18da3"
