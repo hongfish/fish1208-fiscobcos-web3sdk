@@ -2,8 +2,10 @@
 ## 项目结构
 ![001.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/001.png)
 * contract 应用合约，sol文件
+
 ![002.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/002.png)
 * fiscobcos-dev   链证书、机构证书、机构私钥、账户
+
 ![003.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/003.png)
 * application-dev.yml
 ```
@@ -45,6 +47,7 @@ contract-address:
 ```
 * pom.xml
 引用fisco-bcos-web3sdk的2.6.1版本
+
 ![004.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/004.png)
 ## 拷贝证书
 ### 集群的链证书、机构证书、机构私钥复制项目fiscobcos-dev文件下
