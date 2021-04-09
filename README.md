@@ -1,5 +1,5 @@
-#基于FiscoBcos的web3sdk实现区块链服务
-##项目结构
+# 基于FiscoBcos的web3sdk实现区块链服务
+## 项目结构
 ![001.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/001.png)
 * contract 应用合约，sol文件
 ![002.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/002.png)
@@ -46,53 +46,53 @@ contract-address:
 * pom.xml
 引用fisco-bcos-web3sdk的2.6.1版本
 ![004.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/004.png)
-##拷贝证书
-###集群的链证书、机构证书、机构私钥复制项目fiscobcos-dev文件下
+## 拷贝证书
+### 集群的链证书、机构证书、机构私钥复制项目fiscobcos-dev文件下
 ![005.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/005.png)
-###控制台下账户复制项目fiscobcos-dev文件下
+### 控制台下账户复制项目fiscobcos-dev文件下
 ![006.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/006.png)
-##控制台部署合约
+## 控制台部署合约
 ![007.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/007.png)
 ```
 deploy KVPerson 
 transaction hash: 0x72908963644b7e897bf03d0a9ddb9f76428f5b1684aee89eb251d0adf15bdb75
 contract address: 0x3cc40ecd5000f58c3458fef29b91114bd5e18da3
 ```
-###拷贝合约地址
+### 拷贝合约地址
 把合约地址复制到项目的application-dev.yml配置文件里，通过合约地址来加载合约，获取合约对象。
 ![008.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/008.png)
 
-###生成java文件
+### 生成java文件
 使用web3sdk api将合约转换成java文件。执行SolidityGeneratorTest的compileSolFilesToJava()，在com.fish1208.temp包下生成java文件。
 ![009.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/009.png)
 
 将转换后的java文件复制到项目com.fish1208.contract包里
 ![010.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/010.png)
 
-##代码开发
-###AccountConfig.java
+## 代码开发
+### AccountConfig.java
 通过application-dev.yml配置文件的accounts项，获取签名，Credentials对象
 
-###GroupChannelConnectionsPropertyConfig.java
+### GroupChannelConnectionsPropertyConfig.java
 通过application-dev.yml配置文件的group-channel-connections-config项，获取群组连接信息
 
-###ServiceConfig.java
+### ServiceConfig.java
 通过application-dev.yml配置文件的channel-service项，获取Service对象
 
-###Web3jConfig.java
+### Web3jConfig.java
 获取web3j对象
 
-###ContractConfig.java
+### ContractConfig.java
 通过application-dev.yml配置文件的contract-address得到合约地址，用来加载合约，获取合约对象
 
-###PersonController.java
+### PersonController.java
 调用合约的set、get方法，进行数据上链、链上数据查询。
 
-##项目启动
+## 项目启动
 ![011.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/011.png)
 
-##调用接口
-###执行KVPerson合约set方法
+## 调用接口
+### 执行KVPerson合约set方法
 http://127.0.0.1:7022/contract/person/set
 
 **请求**
@@ -108,7 +108,7 @@ Content-Type: application/json
 ```
 ![012.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/012.png)
 
-###执行KVPerson合约get方法
+### 执行KVPerson合约get方法
 http://127.0.0.1:7022/contract/person/get?id=3
 **请求**
 ```
@@ -118,6 +118,6 @@ id=3
 ![013.png](https://github.com/hongfish/fish1208-fiscobcos-web3sdk/blob/main/src/main/resources/image/013.png)
 
 
-##Github地址
+## Github地址
 https://github.com/hongfish/fish1208-fiscobcos-web3sdk
 
